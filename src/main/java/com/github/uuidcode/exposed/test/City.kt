@@ -34,6 +34,14 @@ fun main(args: Array<String>) {
             it[displayName] = "display_test_111"
         }
 
+        val list = City.select {
+            City.id greaterEq 1
+        }
+
+        list.forEach {
+            println(it)
+        }
+
         City.deleteWhere {
             City.id eq city[City.id]
         }
