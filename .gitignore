@@ -2,5 +2,4 @@
 .gitignore
 .idea/
 exposed-test.iml
-src/test/
 target/
