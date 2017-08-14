@@ -20,18 +20,18 @@ class CityTest {
         transaction {
             SchemaUtils.create(City)
 
-            val city = main.java.com.github.uuidcode.exposed.test.City.insert {
+            val city = City.insert {
                 it[name] = "test"
                 it[displayName] = "display_test"
             }
 
-            main.java.com.github.uuidcode.exposed.test.City.update({
+            City.update({
                 City.id eq 1
             }) {
                 it[displayName] = "display_test_111"
             }
 
-            val list = main.java.com.github.uuidcode.exposed.test.City.select {
+            val list = City.select {
                 City.id greaterEq 1
             }
 
@@ -39,7 +39,7 @@ class CityTest {
                 println(it)
             }
 
-            main.java.com.github.uuidcode.exposed.test.City.deleteWhere {
+            City.deleteWhere {
                 City.id eq city[City.id]
             }
         }
